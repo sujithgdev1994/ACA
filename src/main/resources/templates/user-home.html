@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Home</title>
+  <!-- Add your CSS stylesheets or include Bootstrap or any other styling libraries here -->
+  <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        div {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a th:href="@{/home}">Home</a></li>
+    <li><a th:href="@{/profile}">Profile</a></li>
+    <li><a th:href="@{/settings}">Settings</a></li>
+    <li><a th:href="@{/}">Logout</a></li>
+  </ul>
+</nav>
+
+<div>
+  <h1>Welcome, <span th:text="${username}"></span>!</h1>
+  <p>This is your user home page where you can access personalized content and features.</p>
+
+  <!-- Add more content and features as needed -->
+
+  <footer>
+    &copy; 2023 Your Company
+  </footer>
+</div>
+</body>
+</html>

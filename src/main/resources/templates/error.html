@@ -1,0 +1,28 @@
+<!-- src/main/resources/templates/error.html -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Error</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header bg-danger text-white">
+          <h3 class="mb-0">Error</h3>
+        </div>
+        <div class="card-body">
+          <p th:text="${errorMessage}">An error occurred.</p>
+          <a href="/" class="btn btn-primary">Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

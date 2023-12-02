@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit User</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header bg-info text-white">
+          <h3 class="mb-0">Edit User</h3>
+        </div>
+        <div class="card-body">
+          <form th:action="@{/update-user}" method="post">
+            <!-- Add hidden input for user ID -->
+            <input type="hidden" name="userId" th:value="${user.id}" />
+
+
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" class="form-control" th:value="${user.name}" required>
+            </div>
+            <div class="form-group">
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username" class="form-control" th:value="${user.username}" readonly>
+              <!-- Add the "readonly" attribute to disable editing -->
+            </div>
+            <div class="form-group">
+              <label for="mobileNumber">Mobile Number:</label>
+              <input type="text" id="mobileNumber" name="mobileNumber" class="form-control" th:value="${user.mobileNumber}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Update User</button>
+
+            <!-- Back button to return to user-list page -->
+            <a th:href="@{/user-all}" class="btn btn-secondary">Back</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

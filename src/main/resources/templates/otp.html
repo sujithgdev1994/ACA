@@ -1,0 +1,39 @@
+<!-- src/main/resources/templates/otp.html -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>OTP Verification</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header bg-primary text-white text-center">
+          <h3>OTP Verification</h3>
+        </div>
+        <div class="card-body">
+          <form th:action="@{/verify-otp}" method="post">
+            <div class="form-group">
+              <label for="otp">Enter OTP:</label>
+              <input type="text" id="otp" name="otp" class="form-control" required>
+            </div>
+            <!-- You can include hidden input fields to carry forward any necessary information -->
+            <!-- For example, if you need to carry forward the username -->
+            <input type="hidden" name="username" th:value="${session.username}" />
+            <input type="hidden" name="role" th:value="${session.role}" />
+            <button type="submit" class="btn btn-primary btn-block">Verify OTP</button>
+          </form>
+          <!-- You can provide a link to resend the OTP if needed -->
+          <p class="text-center mt-3"><a th:href="@{'/generate-otp?username=' + ${session.username}}">Resend OTP</a></p>
+
+        </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
